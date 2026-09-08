@@ -2,25 +2,54 @@
 import json
 import os
 import http.client
+import re
 import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-CROUS_URL = os.environ["CROUS_URL"]
 STATE_FILE = Path("state.json")
-TOOL_IDS = [47]
+DEFAULT_TOOL_IDS = [47]
 
 TRANSIENT_STATUSES = {400, 403, 408, 425, 429, 500, 502, 503, 504, 520, 521, 522, 523, 524}
 
 class SiteUnavailable(Exception):
     pass
 
+
+CROUS_URL = os.environ.get("CROUS_URL", "").strip()
+if not CROUS_URL:
+    sys.exit(
+        "CROUS_URL n'est pas defini.\n"
+        "Settings > Secrets and variables > Actions > onglet Variables > New repository variable\n"
+        "Name: CROUS_URL / Value: l'URL de la carte sur trouverunlogement.lescrous.fr"
+    )
+
 parsed = urlparse(CROUS_URL)
-bounds_raw = parse_qs(parsed.query)["bounds"][0]
-w, n, e, s = (float(x) for x in bounds_raw.split("_"))
+
+bounds_raw = parse_qs(parsed.query).get("bounds", [""])[0]
+if not bounds_raw:
+    sys.exit(
+        f"CROUS_URL ne contient pas de parametre 'bounds': {CROUS_URL}\n"
+        "Ouvre trouverunlogement.lescrous.fr, deplace/zoome la carte sur ta zone, "
+        "puis recopie l'URL complete de la barre d'adresse."
+    )
+
+try:
+    w, n, e, s = (float(x) for x in bounds_raw.split("_"))
+except ValueError:
+    sys.exit(
+        f"Le parametre 'bounds' est mal forme: {bounds_raw!r}\n"
+        "Format attendu: ouest_nord_est_sud (4 nombres separes par des '_')."
+    )
 location = [{"lon": w, "lat": n}, {"lon": e, "lat": s}]
+
+# L'id de campagne se lit dans l'URL (.../tools/47/search?...). Il change quand le
+# CROUS ouvre une nouvelle campagne, donc on le prend dans l'URL plutot qu'en dur.
+match = re.search(r"/tools/(\d+)", parsed.path)
+TOOL_IDS = [int(match.group(1))] if match else DEFAULT_TOOL_IDS
+print(f"zone={bounds_raw} tools={TOOL_IDS}")
 
 
 def query(tool_id):
@@ -55,7 +84,7 @@ def query(tool_id):
         raise
     except (urllib.error.URLError, TimeoutError, http.client.HTTPException) as exc:
         raise SiteUnavailable(f"tool {tool_id}: {type(exc).__name__} {exc}") from exc
-    
+
     try:
         data = json.loads(raw)
     except json.JSONDecodeError as exc:
@@ -87,7 +116,7 @@ try:
 except SiteUnavailable as exc:
     print(f"skipping run, site unavailable: {exc}", file=sys.stderr)
     sys.exit(0)
-    
+
 previous_totals = None
 if STATE_FILE.exists():
     prev = json.loads(STATE_FILE.read_text())
