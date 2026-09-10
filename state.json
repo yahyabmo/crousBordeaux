@@ -1,15 +1,6 @@
 {
   "totals": {
-    "47": 1
+    "47": 0
   },
-  "items": [
-    {
-      "tool": 47,
-      "id": 1707,
-      "address": "AVENUE COLLEGNO 33400 TALENCE",
-      "rent": 37500,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/1707"
-    }
-  ]
+  "items": []
 }
