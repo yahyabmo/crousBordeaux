@@ -1,6 +1,6 @@
 {
   "totals": {
-    "47": 1
+    "47": 2
   },
   "items": [
     {
@@ -10,6 +10,14 @@
       "rent": 31016,
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/89"
+    },
+    {
+      "tool": 47,
+      "id": 2805,
+      "address": "8 rue des Tulipiers 33170 GRADIGNAN",
+      "rent": 39486,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/2805"
     }
   ]
 }
