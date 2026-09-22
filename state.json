@@ -1,15 +1,6 @@
 {
   "totals": {
-    "47": 1
+    "47": 0
   },
-  "items": [
-    {
-      "tool": 47,
-      "id": 89,
-      "address": "4 CHEMIN PEYDAVANT 33400 TALENCE",
-      "rent": 31016,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/89"
-    }
-  ]
+  "items": []
 }
