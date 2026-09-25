@@ -1,6 +1,6 @@
 {
   "totals": {
-    "47": 1
+    "47": 2
   },
   "items": [
     {
@@ -10,6 +10,14 @@
       "rent": 31016,
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/89"
+    },
+    {
+      "tool": 47,
+      "id": 1640,
+      "address": "32 - 36 CHEMIN DE POMEROL 33000 BORDEAUX",
+      "rent": 28320,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/1640"
     }
   ]
 }
