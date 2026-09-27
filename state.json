@@ -5,19 +5,19 @@
   "items": [
     {
       "tool": 47,
-      "id": 89,
-      "address": "4 CHEMIN PEYDAVANT 33400 TALENCE",
-      "rent": 62032,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/89"
-    },
-    {
-      "tool": 47,
       "id": 1640,
       "address": "32 - 36 CHEMIN DE POMEROL 33000 BORDEAUX",
       "rent": 28320,
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/1640"
+    },
+    {
+      "tool": 47,
+      "id": 89,
+      "address": "4 CHEMIN PEYDAVANT 33400 TALENCE",
+      "rent": 62032,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/89"
     }
   ]
 }
