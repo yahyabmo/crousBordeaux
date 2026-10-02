@@ -5,19 +5,19 @@
   "items": [
     {
       "tool": 47,
-      "id": 1673,
-      "address": "AVENUE COLLEGNO 33400 TALENCE",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/1673"
-    },
-    {
-      "tool": 47,
       "id": 1566,
       "address": "10 rue Robert ESCARPIT 33600 PESSAC",
       "rent": 35779,
       "bedroomCount": 4,
       "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/1566"
+    },
+    {
+      "tool": 47,
+      "id": 1673,
+      "address": "AVENUE COLLEGNO 33400 TALENCE",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/1673"
     }
   ]
 }
