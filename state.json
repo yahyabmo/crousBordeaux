@@ -13,19 +13,19 @@
     },
     {
       "tool": 47,
-      "id": 1660,
-      "address": "AVENUE COLLEGNO 33400 TALENCE",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/1660"
-    },
-    {
-      "tool": 47,
       "id": 1707,
       "address": "AVENUE COLLEGNO 33400 TALENCE",
       "rent": 37500,
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/1707"
+    },
+    {
+      "tool": 47,
+      "id": 1660,
+      "address": "AVENUE COLLEGNO 33400 TALENCE",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/1660"
     }
   ]
 }
