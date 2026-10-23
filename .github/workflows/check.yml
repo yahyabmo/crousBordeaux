@@ -49,6 +49,33 @@ jobs:
             ${{ steps.check.outputs.items }}
           
             🌍 View all listings: ${{ vars.CROUS_URL }}
+      - name: Send email when the CROUS campaign is closed
+        if: steps.check.outputs.campaign_closed == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: BORDEAUX-CROUS Watcher <${{ secrets.MAIL_USERNAME }}>
+          to: ${{ secrets.MAIL_USERNAME }}
+          bcc: ${{ secrets.MAIL_TO }}
+          subject: "/!\\ CROUS: campagne terminee, la surveillance ne trouve plus rien"
+          body: |
+            La campagne CROUS surveillee (tool ${{ steps.check.outputs.tools }}) n'existe plus :
+            l'API repond 404. Plus aucune alerte logement ne partira tant que
+            CROUS_URL n'aura pas ete mise a jour.
+
+            A faire :
+              1. Ouvrir https://trouverunlogement.lescrous.fr
+              2. Recadrer la carte sur la zone voulue
+              3. Copier l'URL complete de la barre d'adresse
+              4. La coller dans Settings > Secrets and variables > Actions
+                 > onglet Variables > CROUS_URL
+
+            Ce message n'est envoye qu'une seule fois, pas a chaque verification.
+
       - name: Commit state
         run: |
           if [ -z "$(git status --porcelain state.json)" ]; then
