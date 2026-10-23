@@ -151,10 +151,26 @@ de 2 minutes ne consomme aucun quota.
 
 ## Quand un e-mail part-il ?
 
-Dès que le **nombre total** de logements de la zone change, dans **les deux sens** :
-`0 → 2` (un logement s'est libéré) mais aussi `2 → 0` (quelqu'un a été plus rapide).
-Les deux sont des informations utiles, mais si tu ne veux être prévenu que des
-hausses, c'est la ligne `changed = ...` de `check.py` qu'il faut modifier.
+**Uniquement quand le nombre de logements augmente** : `0 → 2`, `1 → 3`. Une baisse
+(`2 → 0`, le logement a été pris) n'appelle aucune action de ta part, donc elle met
+l'état à jour en silence. Alerter dans les deux sens doublait les mails pour rien.
+
+Il existe un second e-mail, envoyé **une seule fois**, quand la campagne CROUS ferme
+(voir ci-dessous).
+
+## Quand la campagne CROUS se termine
+
+Chaque campagne a un identifiant (`/tools/47/`). Quand le CROUS en ouvre une nouvelle,
+l'ancienne disparaît et l'API répond **404** sur l'ancien identifiant.
+
+Dans ce cas le script **ne fait pas échouer le run**, volontairement : un run en échec
+déclenche un e-mail « All jobs have failed » de GitHub, soit plus de 700 par jour au
+rythme de 2 minutes. À la place il écrit `"status": "closed"` dans `state.json` et
+envoie **un seul** e-mail d'avertissement.
+
+Pour repartir : recadre la carte sur trouverunlogement.lescrous.fr, copie la nouvelle
+URL et remplace la variable `CROUS_URL`. Le nouvel identifiant est lu automatiquement
+depuis l'URL, il n'y a pas de code à modifier.
 
 ## En cas de problème
 
@@ -168,4 +184,6 @@ hausses, c'est la ligne `changed = ...` de `check.py` qu'il faut modifier.
 | L'e-mail ne part pas, SMTP refusé | Mot de passe normal utilisé au lieu du mot de passe d'application, ou validation en 2 étapes désactivée |
 | L'étape *Commit state* échoue en 403 | Settings → Actions → General → *Workflow permissions* → « Read and write permissions » |
 | `skipping run, site unavailable` | Le site du CROUS répond mal sur ce coup-là. Volontaire : le run est ignoré, le suivant réessaiera |
-| Plus aucune alerte depuis des semaines | Nouvelle campagne CROUS : recadre la carte et remets à jour `CROUS_URL` |
+| `CAMPAGNE FERMEE` dans les logs | La campagne est terminée : remets à jour `CROUS_URL` avec la nouvelle URL |
+| Pluie d'e-mails « All jobs have failed » | Un run échoue en boucle. Mets le cronjob en pause, lis les logs, corrige, réactive |
+| Plus aucune alerte depuis des semaines | Vérifie dans l'ordre : le token a expiré, le cronjob est désactivé, ou la campagne a changé |
