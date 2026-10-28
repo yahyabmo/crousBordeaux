@@ -13,6 +13,9 @@ STATE_FILE = Path("state.json")
 DEFAULT_TOOL_IDS = [47]
 
 TRANSIENT_STATUSES = {400, 403, 408, 425, 429, 500, 502, 503, 504, 520, 521, 522, 523, 524}
+# Un 404 isole est une panne passagere de l'API, pas une fin de campagne.
+# On n'alerte qu'apres ce nombre de 404 consecutifs (~1h au rythme de 2 min).
+NOT_FOUND_STREAK_ALERT = 30
 
 class SiteUnavailable(Exception):
     pass
@@ -135,7 +138,7 @@ previous = {}
 if STATE_FILE.exists():
     previous = json.loads(STATE_FILE.read_text())
 previous_totals = previous.get("totals")
-previous_status = previous.get("status", "ok")
+previous_ids = set(previous.get("seen_ids", []))
 
 totals = {}
 items = []
@@ -149,45 +152,57 @@ except SiteUnavailable as exc:
     print(f"skipping run, site unavailable: {exc}", file=sys.stderr)
     sys.exit(0)
 except CampaignClosed as exc:
-    # On sort en succes exprès : faire echouer le run enverrait un mail d'echec
-    # GitHub a chaque declenchement, soit des centaines par jour. On previent
-    # une seule fois, via l'etat, puis on reste silencieux.
-    print(f"CAMPAGNE FERMEE: la campagne {exc} n'existe plus (HTTP 404).")
-    print("Mets a jour CROUS_URL avec la nouvelle URL de trouverunlogement.lescrous.fr.")
-    first_time = previous_status != "closed"
-    STATE_FILE.write_text(
-        json.dumps(
-            {"status": "closed", "totals": previous_totals, "items": []},
-            indent=2,
-            ensure_ascii=False,
-        )
-    )
+    # Un 404 peut etre une panne passagere : on ne crie qu'au bout de plusieurs
+    # echecs d'affilee. On sort toujours en succes, sinon GitHub envoie un mail
+    # d'echec a chaque declenchement (plus de 700 par jour au rythme de 2 min).
+    streak = previous.get("not_found_streak", 0) + 1
+    alert = streak == NOT_FOUND_STREAK_ALERT
+    state = dict(previous)
+    state["not_found_streak"] = streak
+    if alert:
+        state["status"] = "closed"
+    STATE_FILE.write_text(json.dumps(state, indent=2, ensure_ascii=False))
+    print(f"HTTP 404 sur la campagne {exc} ({streak}/{NOT_FOUND_STREAK_ALERT} d'affilee)")
     write_outputs(
         changed="false",
-        campaign_closed="true" if first_time else "false",
+        campaign_closed="true" if alert else "false",
         tools=",".join(str(t) for t in TOOL_IDS),
     )
     sys.exit(0)
 
-# On n'alerte que sur les hausses : une baisse (logement deja pris) n'appelle
-# aucune action, et alerter dans les deux sens doublait les mails.
-increased = previous_totals is not None and any(
-    count > previous_totals.get(tool, 0) for tool, count in totals.items()
-)
+# On alerte sur les logements NOUVEAUX, identifies par leur id, et non sur la
+# variation du total : quand un logement disparait pendant qu'un autre apparait,
+# le total ne bouge pas alors qu'il y a bien une nouvelle offre a saisir.
+current_ids = {str(it["id"]) for it in items}
+new_items = [it for it in items if str(it["id"]) not in previous_ids]
+
 STATE_FILE.write_text(
-    json.dumps({"status": "ok", "totals": totals, "items": items}, indent=2, ensure_ascii=False)
+    json.dumps(
+        {
+            "status": "ok",
+            "not_found_streak": 0,
+            "totals": totals,
+            "seen_ids": sorted(current_ids),
+            "items": items,
+        },
+        indent=2,
+        ensure_ascii=False,
+    )
 )
 
-print(f"previous={fmt(previous_totals)} current={fmt(totals)} increased={increased}")
+print(f"previous={fmt(previous_totals)} current={fmt(totals)} nouveaux={len(new_items)}")
 
-summary_lines = [
-    f"- [tool {it['tool']}] {it['address']} ({it['bedroomCount']} lit(s), {it['rent']/100 if it['rent'] else 'N/A'}€)\n  🔗 {it['url']}"
-    for it in items
-]
+
+def describe(it):
+    rent = f"{it['rent']/100:.2f} EUR" if it["rent"] else "loyer N/A"
+    return f"- {it['address']} ({it['bedroomCount']} lit(s), {rent})\n  {it['url']}"
+
+
 write_outputs(
-    changed="true" if increased else "false",
+    changed="true" if new_items else "false",
     campaign_closed="false",
+    count=str(len(new_items)),
     previous=fmt(previous_totals),
     total=fmt(totals),
-    items="\n".join(summary_lines) if summary_lines else "(no listings)",
+    items="\n".join(describe(it) for it in new_items) if new_items else "(aucun)",
 )
