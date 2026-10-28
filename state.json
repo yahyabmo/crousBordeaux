@@ -1,8 +1,13 @@
 {
   "status": "ok",
+  "not_found_streak": 0,
   "totals": {
     "47": 2
   },
+  "seen_ids": [
+    "1606",
+    "67"
+  ],
   "items": [
     {
       "tool": 47,
