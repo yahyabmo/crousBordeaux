@@ -151,26 +151,32 @@ de 2 minutes ne consomme aucun quota.
 
 ## Quand un e-mail part-il ?
 
-**Uniquement quand le nombre de logements augmente** : `0 → 2`, `1 → 3`. Une baisse
-(`2 → 0`, le logement a été pris) n'appelle aucune action de ta part, donc elle met
-l'état à jour en silence. Alerter dans les deux sens doublait les mails pour rien.
+**Quand un logement que tu n'as pas encore vu apparaît**, identifié par son
+identifiant d'annonce — pas quand le compteur change.
 
-Il existe un second e-mail, envoyé **une seule fois**, quand la campagne CROUS ferme
-(voir ci-dessous).
+C'est une distinction qui compte. Si un logement part pendant qu'un autre arrive,
+le total reste identique (`2 → 2`) alors qu'il y a bien une nouvelle offre à saisir.
+Une alerte basée sur le total ratait complètement ce cas, qui est fréquent.
+
+Un logement qui disparaît ne déclenche rien : il n'y a aucune action à faire.
 
 ## Quand la campagne CROUS se termine
 
 Chaque campagne a un identifiant (`/tools/47/`). Quand le CROUS en ouvre une nouvelle,
-l'ancienne disparaît et l'API répond **404** sur l'ancien identifiant.
+l'ancienne disparaît et l'API répond **404**.
 
-Dans ce cas le script **ne fait pas échouer le run**, volontairement : un run en échec
-déclenche un e-mail « All jobs have failed » de GitHub, soit plus de 700 par jour au
-rythme de 2 minutes. À la place il écrit `"status": "closed"` dans `state.json` et
-envoie **un seul** e-mail d'avertissement.
+Mais un 404 isolé est le plus souvent une **panne passagère** de l'API, pas une fin de
+campagne — c'est arrivé, et ça a produit des centaines de mails d'échec. Le script
+tolère donc les 404 et ne signale la fin de campagne qu'après **30 échecs consécutifs**
+(environ une heure), par un unique e-mail. Dès que l'API répond à nouveau, le compteur
+est remis à zéro.
 
-Pour repartir : recadre la carte sur trouverunlogement.lescrous.fr, copie la nouvelle
-URL et remplace la variable `CROUS_URL`. Le nouvel identifiant est lu automatiquement
-depuis l'URL, il n'y a pas de code à modifier.
+Dans tous les cas le run se termine en **succès** : un run en échec déclenche un e-mail
+« All jobs have failed » de GitHub, soit plus de 700 par jour au rythme de 2 minutes.
+
+Pour repartir sur une nouvelle campagne : recadre la carte sur
+trouverunlogement.lescrous.fr, copie l'URL et remplace la variable `CROUS_URL`.
+Le nouvel identifiant est lu automatiquement depuis l'URL.
 
 ## En cas de problème
 

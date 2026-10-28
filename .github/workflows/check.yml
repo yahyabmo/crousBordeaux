@@ -38,17 +38,16 @@ jobs:
           from: BORDEAUX-CROUS Watcher <${{ secrets.MAIL_USERNAME }}>
           to: ${{ secrets.MAIL_USERNAME }}
           bcc: ${{ secrets.MAIL_TO }}
-          subject: "CROUS availability changed: ${{ steps.check.outputs.previous }} → ${{ steps.check.outputs.total }}"
+          subject: "CROUS: ${{ steps.check.outputs.count }} nouveau(x) logement(s) a Talence"
           body: |
-            New accommodations available in your CROUS search zone!
-          
-            Previous: ${{ steps.check.outputs.previous }}
-            Now:      ${{ steps.check.outputs.total }}
-          
-            📋 Available Listings:
+            ${{ steps.check.outputs.count }} nouveau(x) logement(s) dans ta zone :
+
             ${{ steps.check.outputs.items }}
-          
-            🌍 View all listings: ${{ vars.CROUS_URL }}
+
+            Total dans la zone : ${{ steps.check.outputs.total }} (avant : ${{ steps.check.outputs.previous }})
+
+            Voir la carte : ${{ vars.CROUS_URL }}
+
       - name: Send email when the CROUS campaign is closed
         if: steps.check.outputs.campaign_closed == 'true'
         uses: dawidd6/action-send-mail@v3
