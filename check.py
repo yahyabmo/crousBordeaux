@@ -33,33 +33,48 @@ if not CROUS_URL:
         "Name: CROUS_URL / Value: l'URL de la carte sur trouverunlogement.lescrous.fr"
     )
 
-parsed = urlparse(CROUS_URL)
 
-bounds_raw = parse_qs(parsed.query).get("bounds", [""])[0]
-if not bounds_raw:
-    sys.exit(
-        f"CROUS_URL ne contient pas de parametre 'bounds': {CROUS_URL}\n"
-        "Ouvre trouverunlogement.lescrous.fr, deplace/zoome la carte sur ta zone, "
-        "puis recopie l'URL complete de la barre d'adresse."
-    )
+def parse_zone(url):
+    """Une URL de carte du CROUS -> une zone interrogeable."""
+    parsed = urlparse(url)
 
-try:
-    w, n, e, s = (float(x) for x in bounds_raw.split("_"))
-except ValueError:
-    sys.exit(
-        f"Le parametre 'bounds' est mal forme: {bounds_raw!r}\n"
-        "Format attendu: ouest_nord_est_sud (4 nombres separes par des '_')."
-    )
-location = [{"lon": w, "lat": n}, {"lon": e, "lat": s}]
+    bounds_raw = parse_qs(parsed.query).get("bounds", [""])[0]
+    if not bounds_raw:
+        sys.exit(
+            f"Cette URL ne contient pas de parametre 'bounds': {url}\n"
+            "Ouvre trouverunlogement.lescrous.fr, deplace/zoome la carte sur ta zone, "
+            "puis recopie l'URL complete de la barre d'adresse."
+        )
 
-# L'id de campagne se lit dans l'URL (.../tools/47/search?...). Il change quand le
-# CROUS ouvre une nouvelle campagne, donc on le prend dans l'URL plutot qu'en dur.
-match = re.search(r"/tools/(\d+)", parsed.path)
-TOOL_IDS = [int(match.group(1))] if match else DEFAULT_TOOL_IDS
-print(f"zone={bounds_raw} tools={TOOL_IDS}")
+    try:
+        w, n, e, s = (float(x) for x in bounds_raw.split("_"))
+    except ValueError:
+        sys.exit(
+            f"Le parametre 'bounds' est mal forme: {bounds_raw!r}\n"
+            "Format attendu: ouest_nord_est_sud (4 nombres separes par des '_')."
+        )
+
+    # L'id de campagne se lit dans l'URL (.../tools/47/search?...). Il change quand
+    # le CROUS ouvre une nouvelle campagne, donc on le prend dans l'URL.
+    match = re.search(r"/tools/(\d+)", parsed.path)
+    tool_id = int(match.group(1)) if match else DEFAULT_TOOL_IDS[0]
+
+    label = parse_qs(parsed.query).get("locationName", [""])[0].strip() or bounds_raw
+    return {
+        "label": label,
+        "tool_id": tool_id,
+        "location": [{"lon": w, "lat": n}, {"lon": e, "lat": s}],
+    }
 
 
-def query(tool_id):
+# Plusieurs zones se mettent bout a bout dans CROUS_URL, separees par un espace,
+# un retour a la ligne ou une virgule : une URL de carte par commune surveillee.
+ZONES = [parse_zone(u) for u in re.split(r"[\s,]+", CROUS_URL) if u]
+print("zones: " + " | ".join(f"{z['label']} (tool {z['tool_id']})" for z in ZONES))
+
+
+def query(zone):
+    tool_id = zone["tool_id"]
     payload = {
         "idTool": tool_id,
         "need_aggregation": True,
@@ -67,7 +82,7 @@ def query(tool_id):
         "pageSize": 24,
         "sector": None,
         "occupationModes": [],
-        "location": location,
+        "location": zone["location"],
         "residence": None,
         "equipment": [],
         "price": {"max": 100000},
@@ -118,7 +133,7 @@ def query(tool_id):
 def fmt(totals_dict):
     if not totals_dict:
         return "none"
-    return ", ".join(f"tool{k}={v}" for k, v in sorted(totals_dict.items()))
+    return " | ".join(f"{k}: {v}" for k, v in sorted(totals_dict.items()))
 
 
 def write_outputs(**values):
@@ -143,11 +158,16 @@ previous_ids = set(previous.get("seen_ids", []))
 totals = {}
 items = []
 
+seen = set()
 try:
-    for tid in TOOL_IDS:
-        t, its = query(tid)
-        totals[str(tid)] = t
-        items.extend(its)
+    for zone in ZONES:
+        t, its = query(zone)
+        totals[zone["label"]] = t
+        # Deux zones qui se chevauchent peuvent renvoyer la meme annonce.
+        for it in its:
+            if str(it["id"]) not in seen:
+                seen.add(str(it["id"]))
+                items.append(it)
 except SiteUnavailable as exc:
     print(f"skipping run, site unavailable: {exc}", file=sys.stderr)
     sys.exit(0)
@@ -166,7 +186,7 @@ except CampaignClosed as exc:
     write_outputs(
         changed="false",
         campaign_closed="true" if alert else "false",
-        tools=",".join(str(t) for t in TOOL_IDS),
+        tools=",".join(str(z["tool_id"]) for z in ZONES),
     )
     sys.exit(0)
 
