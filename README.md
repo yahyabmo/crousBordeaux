@@ -46,7 +46,24 @@ Onglet **Actions** du repo → bouton vert **« I understand my workflows, go ah
      automatiquement dans l'URL, donc il n'y a rien à modifier dans le code quand
      le CROUS ouvre une nouvelle campagne : il suffit de recopier la nouvelle URL.
 
-4. Repo → **Settings** → **Secrets and variables** → **Actions** → onglet **Variables**
+4. **Pour surveiller plusieurs communes** (Talence *et* Pessac par exemple) : le site
+   ne laisse choisir qu'une commune à la fois, mais il ne sert qu'à cadrer la carte.
+   Récupère une URL par commune et **mets-les toutes dans `CROUS_URL`, séparées par
+   un espace** :
+
+   ```
+   https://...?bounds=-0.61_44.82_-0.57_44.78&locationName=Talence+(33400) https://...?bounds=-0.68_44.83_-0.61_44.77&locationName=Pessac+(33600)
+   ```
+
+   Chaque zone est interrogée séparément, puis les résultats sont fusionnés. Une
+   annonce qui apparaît dans deux zones qui se chevauchent n'est comptée qu'une fois.
+   Le `locationName` de l'URL sert de libellé dans les e-mails et les logs.
+
+   L'alternative, si tu préfères une seule URL : dézoome pour que le rectangle couvre
+   les deux communes d'un coup. Plus simple, mais ça ramasse aussi ce qu'il y a entre
+   les deux (Gradignan, le sud de Bordeaux…).
+
+5. Repo → **Settings** → **Secrets and variables** → **Actions** → onglet **Variables**
    → **New repository variable** :
 
    | Name | Value |
