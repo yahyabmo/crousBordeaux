@@ -31,14 +31,6 @@
     },
     {
       "tool": 48,
-      "id": 1347,
-      "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
-      "rent": 37403,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347"
-    },
-    {
-      "tool": 48,
       "id": 145,
       "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
       "rent": 62505,
@@ -52,6 +44,14 @@
       "rent": 26400,
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2249"
+    },
+    {
+      "tool": 48,
+      "id": 1347,
+      "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
+      "rent": 37403,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347"
     }
   ]
 }
