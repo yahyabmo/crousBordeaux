@@ -3,10 +3,13 @@
   "not_found_streak": 0,
   "totals": {
     "Talence (33400)": 1,
-    "Pessac (33600)": 1
+    "Pessac (33600)": 4
   },
   "seen_ids": [
+    "1347",
+    "2249",
     "2282",
+    "242",
     "531"
   ],
   "items": [
@@ -25,6 +28,30 @@
       "rent": 26400,
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2282"
+    },
+    {
+      "tool": 48,
+      "id": 242,
+      "address": "2 Esplanade des Antilles 33600 PESSAC",
+      "rent": 37806,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/242"
+    },
+    {
+      "tool": 48,
+      "id": 1347,
+      "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
+      "rent": 37403,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347"
+    },
+    {
+      "tool": 48,
+      "id": 2249,
+      "address": "9 Esplanade des Antilles 33600 PESSAC",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2249"
     }
   ]
 }
