@@ -3,11 +3,10 @@
   "not_found_streak": 0,
   "totals": {
     "Talence (33400)": 1,
-    "Pessac (33600)": 3
+    "Pessac (33600)": 2
   },
   "seen_ids": [
     "145",
-    "2249",
     "330",
     "531"
   ],
@@ -35,14 +34,6 @@
       "rent": 39755,
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/330"
-    },
-    {
-      "tool": 48,
-      "id": 2249,
-      "address": "9 Esplanade des Antilles 33600 PESSAC",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2249"
     }
   ]
 }
