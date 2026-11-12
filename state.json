@@ -39,19 +39,19 @@
     },
     {
       "tool": 48,
-      "id": 2282,
-      "address": "9 Esplanade des Antilles 33600 PESSAC",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2282"
-    },
-    {
-      "tool": 48,
       "id": 330,
       "address": "8 Rue Lucie Aubrac 33600 PESSAC",
       "rent": 39755,
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/330"
+    },
+    {
+      "tool": 48,
+      "id": 2282,
+      "address": "9 Esplanade des Antilles 33600 PESSAC",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2282"
     }
   ]
 }
