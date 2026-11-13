@@ -2,22 +2,13 @@
   "status": "ok",
   "not_found_streak": 0,
   "totals": {
-    "Talence (33400)": 1,
+    "Talence (33400)": 0,
     "Pessac (33600)": 1
   },
   "seen_ids": [
-    "145",
-    "531"
+    "145"
   ],
   "items": [
-    {
-      "tool": 48,
-      "id": 531,
-      "address": "10 AV PREVOST 33400 TALENCE",
-      "rent": 37439,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/531"
-    },
     {
       "tool": 48,
       "id": 145,
