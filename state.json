@@ -108,17 +108,5 @@
       "first_seen": "2026-11-16T13:46:17.211843+00:00"
     }
   ],
-  "pending_gone": {
-    "145": {
-      "tool": 48,
-      "id": 145,
-      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 62505,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/145",
-      "first_seen": "2026-11-16T12:04:18.200203+00:00",
-      "missing_runs": 1
-    }
-  }
+  "pending_gone": {}
 }
