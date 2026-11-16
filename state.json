@@ -57,16 +57,6 @@
     },
     {
       "tool": 48,
-      "id": 1902,
-      "address": "7 avenue PEY BERLAND 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1902",
-      "first_seen": "2026-11-16T13:46:17.211843+00:00"
-    },
-    {
-      "tool": 48,
       "id": 700,
       "address": "20 avenue de BARDANAC 33600 PESSAC",
       "city": "Pessac",
@@ -74,6 +64,16 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/700",
       "first_seen": "2026-11-16T13:48:17.725880+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 1902,
+      "address": "7 avenue PEY BERLAND 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1902",
+      "first_seen": "2026-11-16T13:46:17.211843+00:00"
     },
     {
       "tool": 48,
