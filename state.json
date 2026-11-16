@@ -20,13 +20,13 @@
   "items": [
     {
       "tool": 48,
-      "id": 2805,
-      "address": "8 rue des Tulipiers 33170 GRADIGNAN",
+      "id": 1566,
+      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
       "city": "Talence",
-      "rent": 39486,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2805",
-      "first_seen": "2026-11-16T13:36:17.959365+00:00"
+      "rent": 35779,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
+      "first_seen": "2026-11-16T13:40:42.538482+00:00"
     },
     {
       "tool": 48,
@@ -40,16 +40,6 @@
     },
     {
       "tool": 48,
-      "id": 1566,
-      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
-      "city": "Talence",
-      "rent": 35779,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
-      "first_seen": "2026-11-16T13:40:42.538482+00:00"
-    },
-    {
-      "tool": 48,
       "id": 1660,
       "address": "AVENUE COLLEGNO 33400 TALENCE",
       "city": "Talence",
@@ -57,6 +47,16 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1660",
       "first_seen": "2026-11-16T13:44:18.490882+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 2805,
+      "address": "8 rue des Tulipiers 33170 GRADIGNAN",
+      "city": "Talence",
+      "rent": 39486,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2805",
+      "first_seen": "2026-11-16T13:36:17.959365+00:00"
     },
     {
       "tool": 48,
