@@ -1,0 +1,99 @@
+name: check-crous
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: check-crous
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check CROUS availability
+        id: check
+        env:
+          CROUS_URL: ${{ vars.CROUS_URL }}
+        run: python check.py
+
+      - name: Send email on new listings
+        if: steps.check.outputs.changed == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: CROUS Bordeaux <${{ secrets.MAIL_USERNAME }}>
+          to: ${{ secrets.MAIL_USERNAME }}
+          bcc: ${{ secrets.MAIL_TO }}
+          subject: ${{ steps.check.outputs.subject_new }}
+          body: ${{ steps.check.outputs.text_new }}
+          html_body: ${{ steps.check.outputs.html_new }}
+
+      # Derivee negative : pas de sonnerie, juste la trace de la duree de vie.
+      - name: Send email when listings disappear
+        if: steps.check.outputs.gone == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: CROUS Bordeaux <${{ secrets.MAIL_USERNAME }}>
+          to: ${{ secrets.MAIL_USERNAME }}
+          bcc: ${{ secrets.MAIL_TO }}
+          subject: ${{ steps.check.outputs.subject_gone }}
+          body: ${{ steps.check.outputs.text_gone }}
+          html_body: ${{ steps.check.outputs.html_gone }}
+
+      - name: Send email when the CROUS campaign is closed
+        if: steps.check.outputs.campaign_closed == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: CROUS Bordeaux <${{ secrets.MAIL_USERNAME }}>
+          to: ${{ secrets.MAIL_USERNAME }}
+          bcc: ${{ secrets.MAIL_TO }}
+          subject: "CROUS · campagne terminée, la surveillance est à l'arrêt"
+          body: |
+            La campagne surveillée (tool ${{ steps.check.outputs.tools }}) n'existe plus :
+            l'API répond 404. Plus aucune alerte ne partira tant que CROUS_URL
+            n'aura pas été mise à jour.
+
+            À faire :
+              1. Ouvrir https://trouverunlogement.lescrous.fr
+              2. Recadrer la carte sur la zone voulue
+              3. Copier l'URL complète de la barre d'adresse
+              4. La coller dans Settings > Secrets and variables > Actions
+                 > onglet Variables > CROUS_URL
+
+            Ce message n'est envoyé qu'une seule fois, pas à chaque vérification.
+
+      - name: Commit state
+        run: |
+          if [ -z "$(git status --porcelain state.json)" ]; then
+            echo "no state change"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          git commit -m "state: ${{ steps.check.outputs.previous }} -> ${{ steps.check.outputs.total }}"
+          git push
