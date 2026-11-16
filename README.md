@@ -211,6 +211,21 @@ vide ; sans cette confirmation tu recevrais un faux « parti » suivi d'un faux
 reconnue comme l'ancienne, et ne déclenche donc pas non plus de fausse alerte
 d'apparition. Le délai se règle avec `GONE_CONFIRM_RUNS` dans `check.py`.
 
+### Aller voir par soi-même
+
+Chaque e-mail se termine par un bouton par commune surveillée, vers la page de
+recherche du CROUS cadrée sur cette commune, avec le nombre d'annonces au moment
+de l'envoi :
+
+```
+[ Talence · 2 logements ]   [ Pessac · aucun ]
+```
+
+Ce sont les URL de `CROUS_URL` telles quelles, une par zone — ajouter une commune
+à la variable ajoute son bouton, sans rien toucher au code. Le contour est gris et
+non bleu pour que le bouton « Voir l'annonce » de chaque carte reste celui qu'on
+voit en premier.
+
 ## Quand la campagne CROUS se termine
 
 Chaque campagne a un identifiant (`/tools/47/`). Quand le CROUS en ouvre une nouvelle,

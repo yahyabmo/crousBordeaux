@@ -72,6 +72,7 @@ def parse_zone(url):
     label = parse_qs(parsed.query).get("locationName", [""])[0].strip() or bounds_raw
     return {
         "label": label,
+        "url": url,
         # "Pessac (33600)" -> "Pessac" : ce qui s'affiche dans les titres.
         "city": re.sub(r"\s*\(.*\)\s*$", "", label).strip() or label,
         "tool_id": tool_id,
@@ -249,7 +250,42 @@ CARD = """      <tr><td style="padding:0 0 12px 0;">
 BUTTON = """<div style="padding-top:14px;"><a href="{url}" style="display:inline-block;background:#1b5e9e;color:#ffffff;text-decoration:none;font:600 14px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding:11px 18px;border-radius:7px;">Voir l'annonce</a></div>"""
 
 
-def html_mail(title, intro, items, footer, with_button=True):
+ZONE_BUTTON = """<a href="{url}" style="display:inline-block;background:#ffffff;border:1px solid #c4ccd4;color:#1b5e9e;text-decoration:none;font:600 14px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding:10px 16px;border-radius:7px;margin:0 8px 8px 0;">{label}</a>"""
+
+
+def zone_buttons_html(totals):
+    """Un bouton par commune vers sa page de recherche, avec le total du moment."""
+    if not ZONES:
+        return ""
+    buttons = []
+    for zone in ZONES:
+        count = totals.get(zone["label"])
+        if count is None:
+            label = f"Tout voir à {zone['city']}"
+        elif count == 0:
+            label = f"{zone['city']} · aucun"
+        else:
+            label = f"{zone['city']} · {count} logement" + ("s" if count > 1 else "")
+        buttons.append(ZONE_BUTTON.format(url=html.escape(zone["url"], quote=True), label=html.escape(label)))
+    return (
+        '    <tr><td style="padding:6px 0 2px 0;font:600 13px/1.6 -apple-system,BlinkMacSystemFont,'
+        "'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#5c6670;\">Voir par moi-même sur le site du CROUS</td></tr>\n"
+        '    <tr><td style="padding:8px 0 4px 0;">' + "".join(buttons) + "</td></tr>"
+    )
+
+
+def zone_buttons_text(totals):
+    if not ZONES:
+        return ""
+    lines = ["Voir par moi-meme sur le site du CROUS :"]
+    for zone in ZONES:
+        count = totals.get(zone["label"])
+        suffix = "" if count is None else f" ({count})"
+        lines.append(f"  {zone['city']}{suffix} : {zone['url']}")
+    return "\n".join(lines)
+
+
+def html_mail(title, intro, items, footer, with_button=True, zones_block=""):
     cards = "\n".join(
         CARD.format(
             address=html.escape(it.get("address") or "Adresse non precisee"),
@@ -264,18 +300,22 @@ def html_mail(title, intro, items, footer, with_button=True):
     <tr><td style="padding:0 0 4px 0;font:700 21px/1.3 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#16191d;">{html.escape(title)}</td></tr>
     <tr><td style="padding:0 0 18px 0;font:400 15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#5c6670;">{html.escape(intro)}</td></tr>
 {cards}
+{zones_block}
     <tr><td style="padding:14px 2px 0 2px;border-top:1px solid #e3e6ea;font:400 13px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#8a949e;">{footer}</td></tr>
   </table>
 </body></html>"""
 
 
-def text_mail(intro, items, footer, with_url=True):
+def text_mail(intro, items, footer, with_url=True, zones_block=""):
     lines = [intro, ""]
     for it in items:
         lines.append(f"• {it.get('address') or 'Adresse non precisee'}")
         lines.append(f"  {line_of(it)}")
         if with_url and it.get("url"):
             lines.append(f"  {it['url']}")
+        lines.append("")
+    if zones_block:
+        lines.append(zones_block)
         lines.append("")
     lines.append(re.sub(r"<[^>]+>", "", footer.replace("<br>", "\n")))
     return "\n".join(lines)
@@ -387,15 +427,11 @@ print(
 
 # ------------------------------------------------------------------- les envois
 
-footer_totals = (
-    f"Total surveille : {html.escape(fmt(totals))}<br>Avant : {html.escape(fmt(previous_totals))}"
+footer = (
+    f"Total surveillé : {html.escape(fmt(totals))}<br>Avant : {html.escape(fmt(previous_totals))}"
 )
-map_link = os.environ.get("CROUS_URL", "").split()[0] if os.environ.get("CROUS_URL") else ""
-footer = footer_totals + (
-    f'<br><a href="{html.escape(map_link, quote=True)}" style="color:#8a949e;">Ouvrir la carte</a>'
-    if map_link
-    else ""
-)
+zones_html = zone_buttons_html(totals)
+zones_txt = zone_buttons_text(totals)
 
 outputs = {
     "changed": "true" if new_items else "false",
@@ -417,8 +453,8 @@ if new_items:
     else:
         outputs["subject_new"] = f"CROUS · {len(new_items)} logements à {where}"
         intro = f"{len(new_items)} annonces viennent d'apparaître. Elles peuvent partir en quelques minutes."
-    outputs["html_new"] = html_mail(f"Crous à {where}", intro, new_items, footer)
-    outputs["text_new"] = text_mail(intro, new_items, footer)
+    outputs["html_new"] = html_mail(f"Crous à {where}", intro, new_items, footer, zones_block=zones_html)
+    outputs["text_new"] = text_mail(intro, new_items, footer, zones_block=zones_txt)
 
 if gone_items:
     where = cities_of(gone_items)
@@ -432,7 +468,7 @@ if gone_items:
         "Ces annonces ne sont plus en ligne. Rien à faire — "
         "c'est pour savoir combien de temps une offre tient."
     )
-    outputs["html_gone"] = html_mail(f"Parti à {where}", intro, gone_items, footer, with_button=False)
-    outputs["text_gone"] = text_mail(intro, gone_items, footer, with_url=False)
+    outputs["html_gone"] = html_mail(f"Parti à {where}", intro, gone_items, footer, with_button=False, zones_block=zones_html)
+    outputs["text_gone"] = text_mail(intro, gone_items, footer, with_url=False, zones_block=zones_txt)
 
 write_outputs(**outputs)
