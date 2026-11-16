@@ -2,14 +2,16 @@
   "status": "ok",
   "not_found_streak": 0,
   "totals": {
-    "Talence (33400)": 1,
-    "Pessac (33600)": 4
+    "Talence (33400)": 3,
+    "Pessac (33600)": 6
   },
   "seen_ids": [
     "145",
+    "1566",
     "1905",
     "2805",
-    "330"
+    "330",
+    "394"
   ],
   "items": [
     {
@@ -21,6 +23,26 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2805",
       "first_seen": "2026-11-16T13:36:17.959365+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 394,
+      "address": "Avenue des Facultés 33400 TALENCE",
+      "city": "Talence",
+      "rent": 39937,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/394",
+      "first_seen": "2026-11-16T13:40:42.538482+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 1566,
+      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
+      "city": "Talence",
+      "rent": 35779,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
+      "first_seen": "2026-11-16T13:40:42.538482+00:00"
     },
     {
       "tool": 48,
