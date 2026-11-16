@@ -2,12 +2,11 @@
   "status": "ok",
   "not_found_streak": 0,
   "totals": {
-    "Talence (33400)": 4,
+    "Talence (33400)": 3,
     "Pessac (33600)": 7
   },
   "seen_ids": [
     "1566",
-    "1660",
     "1902",
     "1905",
     "2805",
@@ -16,16 +15,6 @@
     "700"
   ],
   "items": [
-    {
-      "tool": 48,
-      "id": 1566,
-      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
-      "city": "Talence",
-      "rent": 35779,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
-      "first_seen": "2026-11-16T13:40:42.538482+00:00"
-    },
     {
       "tool": 48,
       "id": 394,
@@ -38,6 +27,16 @@
     },
     {
       "tool": 48,
+      "id": 1566,
+      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
+      "city": "Talence",
+      "rent": 35779,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
+      "first_seen": "2026-11-16T13:40:42.538482+00:00"
+    },
+    {
+      "tool": 48,
       "id": 2805,
       "address": "8 rue des Tulipiers 33170 GRADIGNAN",
       "city": "Talence",
@@ -45,16 +44,6 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2805",
       "first_seen": "2026-11-16T13:36:17.959365+00:00"
-    },
-    {
-      "tool": 48,
-      "id": 1660,
-      "address": "AVENUE COLLEGNO 33400 TALENCE",
-      "city": "Talence",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1660",
-      "first_seen": "2026-11-16T13:44:18.490882+00:00"
     },
     {
       "tool": 48,
@@ -97,5 +86,17 @@
       "first_seen": "2026-11-16T13:46:17.211843+00:00"
     }
   ],
-  "pending_gone": {}
+  "pending_gone": {
+    "1660": {
+      "tool": 48,
+      "id": 1660,
+      "address": "AVENUE COLLEGNO 33400 TALENCE",
+      "city": "Talence",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1660",
+      "first_seen": "2026-11-16T13:44:18.490882+00:00",
+      "missing_runs": 1
+    }
+  }
 }
