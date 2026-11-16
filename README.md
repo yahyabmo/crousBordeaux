@@ -1,16 +1,19 @@
 # CROUS Bordeaux — surveillance des logements
 
 Surveille les logements CROUS disponibles dans une zone de la carte
-(Bordeaux Métropole, Talence…) et envoie un e-mail dès que le nombre change.
+(Bordeaux Métropole, Talence, Pessac…). Un e-mail part dès qu'une annonce
+apparaît, et un autre quand une annonce disparaît, avec le temps qu'elle est
+restée en ligne.
 
 ## Comment ça marche
 
 1. **cron-job.org** envoie une requête HTTP à GitHub toutes les 2 minutes.
    Il ne fait *pas* la vérification lui-même : il demande juste à GitHub de démarrer le workflow.
 2. Le **workflow GitHub Actions** (`.github/workflows/check.yml`) exécute `check.py`.
-3. **`check.py`** interroge l'API du CROUS pour la zone de la carte, compare le nombre
-   de logements avec celui de la fois précédente (stocké dans `state.json`) et,
-   si ça a changé, le workflow envoie un e-mail via Gmail puis met à jour `state.json`.
+3. **`check.py`** interroge l'API du CROUS pour la zone de la carte et compare les
+   annonces à celles du relevé précédent (stockées dans `state.json`).
+4. Selon ce qui a bougé, le workflow envoie un ou deux **e-mails** via Gmail,
+   puis met à jour `state.json`.
 
 > **Pourquoi pas le `schedule:` de GitHub ?** Les crons GitHub Actions ne sont pas
 > ponctuels : aux heures chargées ils partent avec 15 à 40 minutes de retard, et
@@ -155,7 +158,6 @@ dans l'onglet Actions du repo.
 ⚠️ Mets le token dans l'en-tête `Authorization`, **jamais** dans l'URL : les URLs
 sont journalisées un peu partout.
 
----
 
 ## Les exécutions ne se marchent pas sur les pieds
 
@@ -166,16 +168,48 @@ de se superposer. Un run dure normalement moins d'une minute.
 Le repo est **public**, donc les minutes GitHub Actions sont illimitées : le rythme
 de 2 minutes ne consomme aucun quota.
 
-## Quand un e-mail part-il ?
+## Qu'est-ce qui part, et quand ?
 
-**Quand un logement que tu n'as pas encore vu apparaît**, identifié par son
-identifiant d'annonce — pas quand le compteur change.
+| Évènement | E-mail |
+|---|---|
+| Une annonce **apparaît** | oui |
+| Une annonce **disparaît** | oui |
+| La campagne CROUS **ferme** | oui, une seule fois |
+
+### Une annonce apparaît
+
+Le déclencheur est **une annonce jamais vue**, identifiée par son identifiant —
+pas une variation du compteur.
 
 C'est une distinction qui compte. Si un logement part pendant qu'un autre arrive,
 le total reste identique (`2 → 2`) alors qu'il y a bien une nouvelle offre à saisir.
 Une alerte basée sur le total ratait complètement ce cas, qui est fréquent.
 
-Un logement qui disparaît ne déclenche rien : il n'y a aucune action à faire.
+Le titre nomme la commune et, quand il n'y a qu'une annonce, le loyer :
+
+```
+CROUS · 1 logement à Pessac — 625,05 €/mois
+CROUS · 3 logements à Talence et Pessac
+```
+
+Les communes viennent du `locationName` de chaque URL dans `CROUS_URL` : rien
+n'est codé en dur, ajouter une commune suffit à la voir apparaître dans les titres.
+
+### Une annonce disparaît
+
+Un e-mail part avec le temps qu'elle est restée en ligne — c'est l'intérêt de
+l'information : savoir à quelle vitesse il faut réagir.
+
+```
+CROUS · parti à Talence — resté en ligne 14 min
+```
+
+**Une disparition n'est annoncée qu'après deux relevés consécutifs sans l'annonce**
+(environ 4 minutes). L'API du CROUS a des creux où elle répond `200` avec une liste
+vide ; sans cette confirmation tu recevrais un faux « parti » suivi d'un faux
+« nouveau » deux minutes plus tard. Une annonce qui réapparaît pendant ce délai est
+reconnue comme l'ancienne, et ne déclenche donc pas non plus de fausse alerte
+d'apparition. Le délai se règle avec `GONE_CONFIRM_RUNS` dans `check.py`.
 
 ## Quand la campagne CROUS se termine
 
@@ -208,5 +242,6 @@ Le nouvel identifiant est lu automatiquement depuis l'URL.
 | L'étape *Commit state* échoue en 403 | Settings → Actions → General → *Workflow permissions* → « Read and write permissions » |
 | `skipping run, site unavailable` | Le site du CROUS répond mal sur ce coup-là. Volontaire : le run est ignoré, le suivant réessaiera |
 | `CAMPAGNE FERMEE` dans les logs | La campagne est terminée : remets à jour `CROUS_URL` avec la nouvelle URL |
+| Un faux « parti » suivi d'un « nouveau » | Ne devrait plus arriver : augmente `GONE_CONFIRM_RUNS` dans `check.py` si l'API est vraiment instable |
 | Pluie d'e-mails « All jobs have failed » | Un run échoue en boucle. Mets le cronjob en pause, lis les logs, corrige, réactive |
 | Plus aucune alerte depuis des semaines | Vérifie dans l'ordre : le token a expiré, le cronjob est désactivé, ou la campagne a changé |

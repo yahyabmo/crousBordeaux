@@ -26,7 +26,7 @@ jobs:
           CROUS_URL: ${{ vars.CROUS_URL }}
         run: python check.py
 
-      - name: Send email on change
+      - name: Send email on new listings
         if: steps.check.outputs.changed == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
@@ -35,18 +35,29 @@ jobs:
           secure: true
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          from: BORDEAUX-CROUS Watcher <${{ secrets.MAIL_USERNAME }}>
+          from: CROUS Bordeaux <${{ secrets.MAIL_USERNAME }}>
           to: ${{ secrets.MAIL_USERNAME }}
           bcc: ${{ secrets.MAIL_TO }}
-          subject: "CROUS: ${{ steps.check.outputs.count }} nouveau(x) logement(s) a Talence"
-          body: |
-            ${{ steps.check.outputs.count }} nouveau(x) logement(s) dans ta zone :
+          subject: ${{ steps.check.outputs.subject_new }}
+          body: ${{ steps.check.outputs.text_new }}
+          html_body: ${{ steps.check.outputs.html_new }}
 
-            ${{ steps.check.outputs.items }}
-
-            Total dans la zone : ${{ steps.check.outputs.total }} (avant : ${{ steps.check.outputs.previous }})
-
-            Voir la carte : ${{ vars.CROUS_URL }}
+      # Derivee negative : pas de sonnerie, juste la trace de la duree de vie.
+      - name: Send email when listings disappear
+        if: steps.check.outputs.gone == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: CROUS Bordeaux <${{ secrets.MAIL_USERNAME }}>
+          to: ${{ secrets.MAIL_USERNAME }}
+          bcc: ${{ secrets.MAIL_TO }}
+          subject: ${{ steps.check.outputs.subject_gone }}
+          body: ${{ steps.check.outputs.text_gone }}
+          html_body: ${{ steps.check.outputs.html_gone }}
 
       - name: Send email when the CROUS campaign is closed
         if: steps.check.outputs.campaign_closed == 'true'
@@ -57,23 +68,23 @@ jobs:
           secure: true
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          from: BORDEAUX-CROUS Watcher <${{ secrets.MAIL_USERNAME }}>
+          from: CROUS Bordeaux <${{ secrets.MAIL_USERNAME }}>
           to: ${{ secrets.MAIL_USERNAME }}
           bcc: ${{ secrets.MAIL_TO }}
-          subject: "/!\\ CROUS: campagne terminee, la surveillance ne trouve plus rien"
+          subject: "CROUS · campagne terminée, la surveillance est à l'arrêt"
           body: |
-            La campagne CROUS surveillee (tool ${{ steps.check.outputs.tools }}) n'existe plus :
-            l'API repond 404. Plus aucune alerte logement ne partira tant que
-            CROUS_URL n'aura pas ete mise a jour.
+            La campagne surveillée (tool ${{ steps.check.outputs.tools }}) n'existe plus :
+            l'API répond 404. Plus aucune alerte ne partira tant que CROUS_URL
+            n'aura pas été mise à jour.
 
-            A faire :
+            À faire :
               1. Ouvrir https://trouverunlogement.lescrous.fr
               2. Recadrer la carte sur la zone voulue
-              3. Copier l'URL complete de la barre d'adresse
+              3. Copier l'URL complète de la barre d'adresse
               4. La coller dans Settings > Secrets and variables > Actions
                  > onglet Variables > CROUS_URL
 
-            Ce message n'est envoye qu'une seule fois, pas a chaque verification.
+            Ce message n'est envoyé qu'une seule fois, pas à chaque vérification.
 
       - name: Commit state
         run: |
