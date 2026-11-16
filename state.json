@@ -27,16 +27,6 @@
     },
     {
       "tool": 48,
-      "id": 394,
-      "address": "Avenue des Facultés 33400 TALENCE",
-      "city": "Talence",
-      "rent": 39937,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/394",
-      "first_seen": "2026-11-16T13:40:42.538482+00:00"
-    },
-    {
-      "tool": 48,
       "id": 2805,
       "address": "8 rue des Tulipiers 33170 GRADIGNAN",
       "city": "Talence",
@@ -44,6 +34,16 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2805",
       "first_seen": "2026-11-16T13:36:17.959365+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 394,
+      "address": "Avenue des Facultés 33400 TALENCE",
+      "city": "Talence",
+      "rent": 39937,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/394",
+      "first_seen": "2026-11-16T13:40:42.538482+00:00"
     },
     {
       "tool": 48,
@@ -67,16 +67,6 @@
     },
     {
       "tool": 48,
-      "id": 1902,
-      "address": "7 avenue PEY BERLAND 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1902",
-      "first_seen": "2026-11-16T13:46:17.211843+00:00"
-    },
-    {
-      "tool": 48,
       "id": 330,
       "address": "8 Rue Lucie Aubrac 33600 PESSAC",
       "city": "Pessac",
@@ -84,6 +74,16 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/330",
       "first_seen": "2026-11-16T13:38:18.541794+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 1902,
+      "address": "7 avenue PEY BERLAND 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1902",
+      "first_seen": "2026-11-16T13:46:17.211843+00:00"
     }
   ],
   "pending_gone": {}
