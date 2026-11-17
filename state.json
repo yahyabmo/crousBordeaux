@@ -3,7 +3,7 @@
   "not_found_streak": 0,
   "totals": {
     "Talence (33400)": 4,
-    "Pessac (33600)": 11
+    "Pessac (33600)": 10
   },
   "seen_ids": [
     "1347",
@@ -16,7 +16,6 @@
     "2805",
     "330",
     "531",
-    "569",
     "584",
     "700"
   ],
@@ -113,16 +112,6 @@
     },
     {
       "tool": 48,
-      "id": 569,
-      "address": "2 avenue Jean Babin 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 45856,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/569",
-      "first_seen": "2026-11-17T13:01:00.660807+00:00"
-    },
-    {
-      "tool": 48,
       "id": 2249,
       "address": "9 Esplanade des Antilles 33600 PESSAC",
       "city": "Pessac",
@@ -152,5 +141,17 @@
       "first_seen": "2026-11-16T13:46:17.211843+00:00"
     }
   ],
-  "pending_gone": {}
+  "pending_gone": {
+    "569": {
+      "tool": 48,
+      "id": 569,
+      "address": "2 avenue Jean Babin 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 45856,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/569",
+      "first_seen": "2026-11-17T13:01:00.660807+00:00",
+      "missing_runs": 1
+    }
+  }
 }
