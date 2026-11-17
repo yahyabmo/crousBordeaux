@@ -18,26 +18,6 @@
   "items": [
     {
       "tool": 48,
-      "id": 394,
-      "address": "Avenue des Facultés 33400 TALENCE",
-      "city": "Talence",
-      "rent": 39937,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/394",
-      "first_seen": "2026-11-16T13:40:42.538482+00:00"
-    },
-    {
-      "tool": 48,
-      "id": 1566,
-      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
-      "city": "Talence",
-      "rent": 35779,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
-      "first_seen": "2026-11-16T13:40:42.538482+00:00"
-    },
-    {
-      "tool": 48,
       "id": 2805,
       "address": "8 rue des Tulipiers 33170 GRADIGNAN",
       "city": "Talence",
@@ -58,23 +38,23 @@
     },
     {
       "tool": 48,
-      "id": 1905,
-      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 40623,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1905",
-      "first_seen": "2026-11-16T13:36:17.959365+00:00"
+      "id": 1566,
+      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
+      "city": "Talence",
+      "rent": 35779,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
+      "first_seen": "2026-11-16T13:40:42.538482+00:00"
     },
     {
       "tool": 48,
-      "id": 700,
-      "address": "20 avenue de BARDANAC 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 26400,
+      "id": 394,
+      "address": "Avenue des Facultés 33400 TALENCE",
+      "city": "Talence",
+      "rent": 39937,
       "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/700",
-      "first_seen": "2026-11-16T13:48:17.725880+00:00"
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/394",
+      "first_seen": "2026-11-16T13:40:42.538482+00:00"
     },
     {
       "tool": 48,
@@ -95,6 +75,26 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1902",
       "first_seen": "2026-11-16T13:46:17.211843+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 1905,
+      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 40623,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1905",
+      "first_seen": "2026-11-16T13:36:17.959365+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 700,
+      "address": "20 avenue de BARDANAC 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/700",
+      "first_seen": "2026-11-16T13:48:17.725880+00:00"
     }
   ],
   "pending_gone": {}
