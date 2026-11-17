@@ -112,16 +112,6 @@
     },
     {
       "tool": 48,
-      "id": 1902,
-      "address": "7 avenue PEY BERLAND 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1902",
-      "first_seen": "2026-11-16T13:46:17.211843+00:00"
-    },
-    {
-      "tool": 48,
       "id": 1347,
       "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
       "city": "Pessac",
@@ -129,6 +119,16 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347",
       "first_seen": "2026-11-17T13:01:00.660807+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 1902,
+      "address": "7 avenue PEY BERLAND 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1902",
+      "first_seen": "2026-11-16T13:46:17.211843+00:00"
     },
     {
       "tool": 48,
