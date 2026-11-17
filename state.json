@@ -112,16 +112,6 @@
     },
     {
       "tool": 48,
-      "id": 2249,
-      "address": "9 Esplanade des Antilles 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2249",
-      "first_seen": "2026-11-17T08:08:19.264314+00:00"
-    },
-    {
-      "tool": 48,
       "id": 1902,
       "address": "7 avenue PEY BERLAND 33600 PESSAC",
       "city": "Pessac",
@@ -138,6 +128,16 @@
       "rent": 26400,
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2282",
+      "first_seen": "2026-11-17T08:08:19.264314+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 2249,
+      "address": "9 Esplanade des Antilles 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2249",
       "first_seen": "2026-11-17T08:08:19.264314+00:00"
     }
   ],
