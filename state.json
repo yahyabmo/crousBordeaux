@@ -2,8 +2,8 @@
   "status": "ok",
   "not_found_streak": 0,
   "totals": {
-    "Talence (33400)": 6,
-    "Pessac (33600)": 10
+    "Talence (33400)": 5,
+    "Pessac (33600)": 9
   },
   "seen_ids": [
     "1483",
@@ -15,7 +15,6 @@
     "2282",
     "2805",
     "330",
-    "394",
     "531",
     "700"
   ],
@@ -49,16 +48,6 @@
       "bedroomCount": 4,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/531",
       "first_seen": "2026-11-17T06:48:17.960597+00:00"
-    },
-    {
-      "tool": 48,
-      "id": 394,
-      "address": "Avenue des Facultés 33400 TALENCE",
-      "city": "Talence",
-      "rent": 39937,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/394",
-      "first_seen": "2026-11-16T13:40:42.538482+00:00"
     },
     {
       "tool": 48,
@@ -141,5 +130,17 @@
       "first_seen": "2026-11-17T08:08:19.264314+00:00"
     }
   ],
-  "pending_gone": {}
+  "pending_gone": {
+    "394": {
+      "tool": 48,
+      "id": 394,
+      "address": "Avenue des Facultés 33400 TALENCE",
+      "city": "Talence",
+      "rent": 39937,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/394",
+      "first_seen": "2026-11-16T13:40:42.538482+00:00",
+      "missing_runs": 1
+    }
+  }
 }
