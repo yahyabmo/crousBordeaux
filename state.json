@@ -31,16 +31,6 @@
     },
     {
       "tool": 48,
-      "id": 531,
-      "address": "10 AV PREVOST 33400 TALENCE",
-      "city": "Talence",
-      "rent": 37439,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/531",
-      "first_seen": "2026-11-17T06:48:17.960597+00:00"
-    },
-    {
-      "tool": 48,
       "id": 2805,
       "address": "8 rue des Tulipiers 33170 GRADIGNAN",
       "city": "Talence",
@@ -48,6 +38,16 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2805",
       "first_seen": "2026-11-16T13:36:17.959365+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 531,
+      "address": "10 AV PREVOST 33400 TALENCE",
+      "city": "Talence",
+      "rent": 37439,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/531",
+      "first_seen": "2026-11-17T06:48:17.960597+00:00"
     },
     {
       "tool": 48,
