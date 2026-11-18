@@ -3,10 +3,9 @@
   "not_found_streak": 0,
   "totals": {
     "Talence (33400)": 4,
-    "Pessac (33600)": 12
+    "Pessac (33600)": 11
   },
   "seen_ids": [
-    "1347",
     "1566",
     "1673",
     "1905",
@@ -63,6 +62,16 @@
     },
     {
       "tool": 48,
+      "id": 584,
+      "address": "2 avenue Jean Babin 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 37925,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/584",
+      "first_seen": "2026-11-17T10:16:17.609718+00:00"
+    },
+    {
+      "tool": 48,
       "id": 700,
       "address": "20 avenue de BARDANAC 33600 PESSAC",
       "city": "Pessac",
@@ -73,13 +82,13 @@
     },
     {
       "tool": 48,
-      "id": 584,
-      "address": "2 avenue Jean Babin 33600 PESSAC",
+      "id": 1905,
+      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
       "city": "Pessac",
-      "rent": 37925,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/584",
-      "first_seen": "2026-11-17T10:16:17.609718+00:00"
+      "rent": 40623,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1905",
+      "first_seen": "2026-11-16T13:36:17.959365+00:00"
     },
     {
       "tool": 48,
@@ -100,26 +109,6 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2282",
       "first_seen": "2026-11-17T08:08:19.264314+00:00"
-    },
-    {
-      "tool": 48,
-      "id": 1905,
-      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 40623,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1905",
-      "first_seen": "2026-11-16T13:36:17.959365+00:00"
-    },
-    {
-      "tool": 48,
-      "id": 1347,
-      "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 37403,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347",
-      "first_seen": "2026-11-17T13:01:00.660807+00:00"
     },
     {
       "tool": 48,
@@ -152,5 +141,17 @@
       "first_seen": "2026-11-16T13:38:18.541794+00:00"
     }
   ],
-  "pending_gone": {}
+  "pending_gone": {
+    "1347": {
+      "tool": 48,
+      "id": 1347,
+      "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 37403,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347",
+      "first_seen": "2026-11-17T13:01:00.660807+00:00",
+      "missing_runs": 1
+    }
+  }
 }
