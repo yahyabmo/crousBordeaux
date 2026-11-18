@@ -2,12 +2,11 @@
   "status": "ok",
   "not_found_streak": 0,
   "totals": {
-    "Talence (33400)": 3,
-    "Pessac (33600)": 10
+    "Talence (33400)": 2,
+    "Pessac (33600)": 9
   },
   "seen_ids": [
     "1566",
-    "1673",
     "1905",
     "2249",
     "2282",
@@ -38,16 +37,6 @@
       "bedroomCount": 4,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
       "first_seen": "2026-11-16T13:40:42.538482+00:00"
-    },
-    {
-      "tool": 48,
-      "id": 1673,
-      "address": "AVENUE COLLEGNO 33400 TALENCE",
-      "city": "Talence",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1673",
-      "first_seen": "2026-11-18T08:58:18.766035+00:00"
     },
     {
       "tool": 48,
@@ -130,5 +119,17 @@
       "first_seen": "2026-11-16T13:38:18.541794+00:00"
     }
   ],
-  "pending_gone": {}
+  "pending_gone": {
+    "1673": {
+      "tool": 48,
+      "id": 1673,
+      "address": "AVENUE COLLEGNO 33400 TALENCE",
+      "city": "Talence",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1673",
+      "first_seen": "2026-11-18T08:58:18.766035+00:00",
+      "missing_runs": 1
+    }
+  }
 }
