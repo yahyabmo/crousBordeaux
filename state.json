@@ -62,6 +62,16 @@
     },
     {
       "tool": 48,
+      "id": 584,
+      "address": "2 avenue Jean Babin 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 37925,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/584",
+      "first_seen": "2026-11-17T10:16:17.609718+00:00"
+    },
+    {
+      "tool": 48,
       "id": 700,
       "address": "20 avenue de BARDANAC 33600 PESSAC",
       "city": "Pessac",
@@ -72,13 +82,13 @@
     },
     {
       "tool": 48,
-      "id": 584,
-      "address": "2 avenue Jean Babin 33600 PESSAC",
+      "id": 1905,
+      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
       "city": "Pessac",
-      "rent": 37925,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/584",
-      "first_seen": "2026-11-17T10:16:17.609718+00:00"
+      "rent": 40623,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1905",
+      "first_seen": "2026-11-16T13:36:17.959365+00:00"
     },
     {
       "tool": 48,
@@ -99,16 +109,6 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2282",
       "first_seen": "2026-11-17T08:08:19.264314+00:00"
-    },
-    {
-      "tool": 48,
-      "id": 1905,
-      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 40623,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1905",
-      "first_seen": "2026-11-16T13:36:17.959365+00:00"
     },
     {
       "tool": 48,
