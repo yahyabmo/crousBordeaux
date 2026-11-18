@@ -50,16 +50,6 @@
     },
     {
       "tool": 48,
-      "id": 1905,
-      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 40623,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1905",
-      "first_seen": "2026-11-16T13:36:17.959365+00:00"
-    },
-    {
-      "tool": 48,
       "id": 2282,
       "address": "9 Esplanade des Antilles 33600 PESSAC",
       "city": "Pessac",
@@ -67,6 +57,16 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2282",
       "first_seen": "2026-11-17T08:08:19.264314+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 1905,
+      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 40623,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1905",
+      "first_seen": "2026-11-16T13:36:17.959365+00:00"
     },
     {
       "tool": 48,
@@ -119,17 +119,5 @@
       "first_seen": "2026-11-16T13:38:18.541794+00:00"
     }
   ],
-  "pending_gone": {
-    "1673": {
-      "tool": 48,
-      "id": 1673,
-      "address": "AVENUE COLLEGNO 33400 TALENCE",
-      "city": "Talence",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1673",
-      "first_seen": "2026-11-18T08:58:18.766035+00:00",
-      "missing_runs": 1
-    }
-  }
+  "pending_gone": {}
 }
