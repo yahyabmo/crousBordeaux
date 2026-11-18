@@ -22,16 +22,6 @@
   "items": [
     {
       "tool": 48,
-      "id": 531,
-      "address": "10 AV PREVOST 33400 TALENCE",
-      "city": "Talence",
-      "rent": 37439,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/531",
-      "first_seen": "2026-11-17T06:48:17.960597+00:00"
-    },
-    {
-      "tool": 48,
       "id": 1566,
       "address": "10 rue Robert ESCARPIT 33600 PESSAC",
       "city": "Talence",
@@ -62,6 +52,16 @@
     },
     {
       "tool": 48,
+      "id": 531,
+      "address": "10 AV PREVOST 33400 TALENCE",
+      "city": "Talence",
+      "rent": 37439,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/531",
+      "first_seen": "2026-11-17T06:48:17.960597+00:00"
+    },
+    {
+      "tool": 48,
       "id": 584,
       "address": "2 avenue Jean Babin 33600 PESSAC",
       "city": "Pessac",
@@ -89,16 +89,6 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/330",
       "first_seen": "2026-11-16T13:38:18.541794+00:00"
-    },
-    {
-      "tool": 48,
-      "id": 1347,
-      "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 37403,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347",
-      "first_seen": "2026-11-17T13:01:00.660807+00:00"
     },
     {
       "tool": 48,
@@ -139,6 +129,16 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2282",
       "first_seen": "2026-11-17T08:08:19.264314+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 1347,
+      "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 37403,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347",
+      "first_seen": "2026-11-17T13:01:00.660807+00:00"
     }
   ],
   "pending_gone": {}
