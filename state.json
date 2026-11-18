@@ -20,16 +20,6 @@
   "items": [
     {
       "tool": 48,
-      "id": 531,
-      "address": "10 AV PREVOST 33400 TALENCE",
-      "city": "Talence",
-      "rent": 37439,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/531",
-      "first_seen": "2026-11-17T06:48:17.960597+00:00"
-    },
-    {
-      "tool": 48,
       "id": 1566,
       "address": "10 rue Robert ESCARPIT 33600 PESSAC",
       "city": "Talence",
@@ -37,6 +27,16 @@
       "bedroomCount": 4,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
       "first_seen": "2026-11-16T13:40:42.538482+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 531,
+      "address": "10 AV PREVOST 33400 TALENCE",
+      "city": "Talence",
+      "rent": 37439,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/531",
+      "first_seen": "2026-11-17T06:48:17.960597+00:00"
     },
     {
       "tool": 48,
