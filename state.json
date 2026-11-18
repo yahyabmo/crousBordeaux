@@ -22,6 +22,16 @@
   "items": [
     {
       "tool": 48,
+      "id": 1566,
+      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
+      "city": "Talence",
+      "rent": 35779,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
+      "first_seen": "2026-11-16T13:40:42.538482+00:00"
+    },
+    {
+      "tool": 48,
       "id": 1606,
       "address": "32 - 36 CHEMIN DE POMEROL 33000 BORDEAUX",
       "city": "Talence",
@@ -42,16 +52,6 @@
     },
     {
       "tool": 48,
-      "id": 1566,
-      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
-      "city": "Talence",
-      "rent": 35779,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
-      "first_seen": "2026-11-16T13:40:42.538482+00:00"
-    },
-    {
-      "tool": 48,
       "id": 2805,
       "address": "8 rue des Tulipiers 33170 GRADIGNAN",
       "city": "Talence",
@@ -62,13 +62,23 @@
     },
     {
       "tool": 48,
-      "id": 584,
-      "address": "2 avenue Jean Babin 33600 PESSAC",
+      "id": 1347,
+      "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
       "city": "Pessac",
-      "rent": 37925,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/584",
-      "first_seen": "2026-11-17T10:16:17.609718+00:00"
+      "rent": 37403,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347",
+      "first_seen": "2026-11-17T13:01:00.660807+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 700,
+      "address": "20 avenue de BARDANAC 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/700",
+      "first_seen": "2026-11-16T13:48:17.725880+00:00"
     },
     {
       "tool": 48,
@@ -82,13 +92,13 @@
     },
     {
       "tool": 48,
-      "id": 700,
-      "address": "20 avenue de BARDANAC 33600 PESSAC",
+      "id": 584,
+      "address": "2 avenue Jean Babin 33600 PESSAC",
       "city": "Pessac",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/700",
-      "first_seen": "2026-11-16T13:48:17.725880+00:00"
+      "rent": 37925,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/584",
+      "first_seen": "2026-11-17T10:16:17.609718+00:00"
     },
     {
       "tool": 48,
@@ -119,16 +129,6 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1902",
       "first_seen": "2026-11-16T13:46:17.211843+00:00"
-    },
-    {
-      "tool": 48,
-      "id": 1347,
-      "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 37403,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347",
-      "first_seen": "2026-11-17T13:01:00.660807+00:00"
     },
     {
       "tool": 48,
