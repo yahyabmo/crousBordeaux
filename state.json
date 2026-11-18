@@ -119,17 +119,5 @@
       "first_seen": "2026-11-17T13:01:00.660807+00:00"
     }
   ],
-  "pending_gone": {
-    "1606": {
-      "tool": 48,
-      "id": 1606,
-      "address": "32 - 36 CHEMIN DE POMEROL 33000 BORDEAUX",
-      "city": "Talence",
-      "rent": 46049,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1606",
-      "first_seen": "2026-11-17T08:36:30.623025+00:00",
-      "missing_runs": 1
-    }
-  }
+  "pending_gone": {}
 }
