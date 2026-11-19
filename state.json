@@ -100,16 +100,6 @@
     },
     {
       "tool": 48,
-      "id": 2282,
-      "address": "9 Esplanade des Antilles 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2282",
-      "first_seen": "2026-11-19T08:06:18.676819+00:00"
-    },
-    {
-      "tool": 48,
       "id": 1347,
       "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
       "city": "Pessac",
@@ -117,6 +107,16 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347",
       "first_seen": "2026-11-19T08:10:33.613274+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 2282,
+      "address": "9 Esplanade des Antilles 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2282",
+      "first_seen": "2026-11-19T08:06:18.676819+00:00"
     }
   ],
   "pending_gone": {}
