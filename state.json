@@ -3,10 +3,9 @@
   "not_found_streak": 0,
   "totals": {
     "Talence (33400)": 2,
-    "Pessac (33600)": 7
+    "Pessac (33600)": 6
   },
   "seen_ids": [
-    "1347",
     "1566",
     "1971",
     "2249",
@@ -85,8 +84,10 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/330",
       "first_seen": "2026-11-16T13:38:18.541794+00:00"
-    },
-    {
+    }
+  ],
+  "pending_gone": {
+    "1347": {
       "tool": 48,
       "id": 1347,
       "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
@@ -94,8 +95,8 @@
       "rent": 37403,
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347",
-      "first_seen": "2026-11-19T08:10:33.613274+00:00"
+      "first_seen": "2026-11-19T08:10:33.613274+00:00",
+      "missing_runs": 1
     }
-  ],
-  "pending_gone": {}
+  }
 }
