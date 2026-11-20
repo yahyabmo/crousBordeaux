@@ -2,14 +2,15 @@
   "status": "ok",
   "not_found_streak": 0,
   "totals": {
-    "Talence (33400)": 1,
-    "Pessac (33600)": 9
+    "Talence (33400)": 2,
+    "Pessac (33600)": 10
   },
   "seen_ids": [
     "1347",
     "138",
     "1566",
     "2249",
+    "2805",
     "330",
     "569",
     "579",
@@ -26,6 +27,26 @@
       "bedroomCount": 4,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
       "first_seen": "2026-11-16T13:40:42.538482+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 2805,
+      "address": "8 rue des Tulipiers 33170 GRADIGNAN",
+      "city": "Talence",
+      "rent": 39486,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2805",
+      "first_seen": "2026-11-20T11:26:17.992446+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 138,
+      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 40623,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/138",
+      "first_seen": "2026-11-19T09:10:35.642946+00:00"
     },
     {
       "tool": 48,
@@ -46,16 +67,6 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/330",
       "first_seen": "2026-11-16T13:38:18.541794+00:00"
-    },
-    {
-      "tool": 48,
-      "id": 138,
-      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 40623,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/138",
-      "first_seen": "2026-11-19T09:10:35.642946+00:00"
     },
     {
       "tool": 48,
