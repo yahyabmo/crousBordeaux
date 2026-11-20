@@ -31,16 +31,6 @@
     },
     {
       "tool": 48,
-      "id": 242,
-      "address": "2 Esplanade des Antilles 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 37806,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/242",
-      "first_seen": "2026-11-19T13:56:18.082286+00:00"
-    },
-    {
-      "tool": 48,
       "id": 569,
       "address": "2 avenue Jean Babin 33600 PESSAC",
       "city": "Pessac",
@@ -128,6 +118,16 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/579",
       "first_seen": "2026-11-20T07:24:18.152185+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 242,
+      "address": "2 Esplanade des Antilles 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 37806,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/242",
+      "first_seen": "2026-11-19T13:56:18.082286+00:00"
     }
   ],
   "pending_gone": {}
