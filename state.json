@@ -3,7 +3,7 @@
   "not_found_streak": 0,
   "totals": {
     "Talence (33400)": 2,
-    "Pessac (33600)": 10
+    "Pessac (33600)": 11
   },
   "seen_ids": [
     "1347",
@@ -11,6 +11,7 @@
     "1566",
     "2249",
     "2805",
+    "2808",
     "330",
     "569",
     "579",
@@ -80,16 +81,6 @@
     },
     {
       "tool": 48,
-      "id": 569,
-      "address": "2 avenue Jean Babin 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 45856,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/569",
-      "first_seen": "2026-11-18T09:04:19.424040+00:00"
-    },
-    {
-      "tool": 48,
       "id": 2249,
       "address": "9 Esplanade des Antilles 33600 PESSAC",
       "city": "Pessac",
@@ -100,13 +91,13 @@
     },
     {
       "tool": 48,
-      "id": 1347,
-      "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
+      "id": 569,
+      "address": "2 avenue Jean Babin 33600 PESSAC",
       "city": "Pessac",
-      "rent": 37403,
+      "rent": 45856,
       "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347",
-      "first_seen": "2026-11-19T08:10:33.613274+00:00"
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/569",
+      "first_seen": "2026-11-18T09:04:19.424040+00:00"
     },
     {
       "tool": 48,
@@ -117,6 +108,26 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/700",
       "first_seen": "2026-11-16T13:48:17.725880+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 2808,
+      "address": "5 Allée Maine de Biran 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2808",
+      "first_seen": "2026-11-20T11:28:17.957987+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 1347,
+      "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 37403,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1347",
+      "first_seen": "2026-11-19T08:10:33.613274+00:00"
     }
   ],
   "pending_gone": {}
