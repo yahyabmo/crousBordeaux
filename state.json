@@ -97,17 +97,5 @@
       "first_seen": "2026-11-19T08:10:33.613274+00:00"
     }
   ],
-  "pending_gone": {
-    "569": {
-      "tool": 48,
-      "id": 569,
-      "address": "2 avenue Jean Babin 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 45856,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/569",
-      "first_seen": "2026-11-18T09:04:19.424040+00:00",
-      "missing_runs": 1
-    }
-  }
+  "pending_gone": {}
 }
