@@ -3,14 +3,13 @@
   "not_found_streak": 0,
   "totals": {
     "Talence (33400)": 1,
-    "Pessac (33600)": 10
+    "Pessac (33600)": 9
   },
   "seen_ids": [
     "1347",
     "138",
     "1566",
     "2249",
-    "242",
     "330",
     "569",
     "579",
@@ -27,16 +26,6 @@
       "bedroomCount": 4,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
       "first_seen": "2026-11-16T13:40:42.538482+00:00"
-    },
-    {
-      "tool": 48,
-      "id": 138,
-      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 40623,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/138",
-      "first_seen": "2026-11-19T09:10:35.642946+00:00"
     },
     {
       "tool": 48,
@@ -80,6 +69,16 @@
     },
     {
       "tool": 48,
+      "id": 138,
+      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 40623,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/138",
+      "first_seen": "2026-11-19T09:10:35.642946+00:00"
+    },
+    {
+      "tool": 48,
       "id": 2249,
       "address": "9 Esplanade des Antilles 33600 PESSAC",
       "city": "Pessac",
@@ -107,8 +106,10 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/579",
       "first_seen": "2026-11-20T07:24:18.152185+00:00"
-    },
-    {
+    }
+  ],
+  "pending_gone": {
+    "242": {
       "tool": 48,
       "id": 242,
       "address": "2 Esplanade des Antilles 33600 PESSAC",
@@ -116,8 +117,8 @@
       "rent": 37806,
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/242",
-      "first_seen": "2026-11-19T13:56:18.082286+00:00"
+      "first_seen": "2026-11-19T13:56:18.082286+00:00",
+      "missing_runs": 1
     }
-  ],
-  "pending_gone": {}
+  }
 }
