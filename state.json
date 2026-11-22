@@ -57,16 +57,6 @@
     },
     {
       "tool": 48,
-      "id": 700,
-      "address": "20 avenue de BARDANAC 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/700",
-      "first_seen": "2026-11-16T13:48:17.725880+00:00"
-    },
-    {
-      "tool": 48,
       "id": 330,
       "address": "8 Rue Lucie Aubrac 33600 PESSAC",
       "city": "Pessac",
@@ -84,6 +74,16 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2249",
       "first_seen": "2026-11-17T08:08:19.264314+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 700,
+      "address": "20 avenue de BARDANAC 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/700",
+      "first_seen": "2026-11-16T13:48:17.725880+00:00"
     }
   ],
   "pending_gone": {}
