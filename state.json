@@ -17,16 +17,6 @@
   "items": [
     {
       "tool": 48,
-      "id": 1566,
-      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
-      "city": "Talence",
-      "rent": 35779,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
-      "first_seen": "2026-11-16T13:40:42.538482+00:00"
-    },
-    {
-      "tool": 48,
       "id": 1971,
       "address": "10 AV PREVOST 33400 TALENCE",
       "city": "Talence",
@@ -34,6 +24,16 @@
       "bedroomCount": 4,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1971",
       "first_seen": "2026-11-20T12:58:18.814708+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 1566,
+      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
+      "city": "Talence",
+      "rent": 35779,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
+      "first_seen": "2026-11-16T13:40:42.538482+00:00"
     },
     {
       "tool": 48,
@@ -67,16 +67,6 @@
     },
     {
       "tool": 48,
-      "id": 2249,
-      "address": "9 Esplanade des Antilles 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2249",
-      "first_seen": "2026-11-17T08:08:19.264314+00:00"
-    },
-    {
-      "tool": 48,
       "id": 330,
       "address": "8 Rue Lucie Aubrac 33600 PESSAC",
       "city": "Pessac",
@@ -84,6 +74,16 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/330",
       "first_seen": "2026-11-16T13:38:18.541794+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 2249,
+      "address": "9 Esplanade des Antilles 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2249",
+      "first_seen": "2026-11-17T08:08:19.264314+00:00"
     }
   ],
   "pending_gone": {}
