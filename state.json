@@ -3,7 +3,7 @@
   "not_found_streak": 0,
   "totals": {
     "Talence (33400)": 2,
-    "Pessac (33600)": 8
+    "Pessac (33600)": 9
   },
   "seen_ids": [
     "1347",
@@ -12,6 +12,7 @@
     "1566",
     "1971",
     "2249",
+    "2572",
     "330",
     "579",
     "584"
@@ -89,6 +90,16 @@
     },
     {
       "tool": 48,
+      "id": 145,
+      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 62505,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/145",
+      "first_seen": "2026-11-23T07:40:33.935025+00:00"
+    },
+    {
+      "tool": 48,
       "id": 1347,
       "address": "6 AVENUE HENRI VIZIOZ 33600 PESSAC",
       "city": "Pessac",
@@ -99,13 +110,13 @@
     },
     {
       "tool": 48,
-      "id": 145,
-      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
+      "id": 2572,
+      "address": "10 Lucie Aubrac 33600 PESSAC",
       "city": "Pessac",
-      "rent": 62505,
+      "rent": 45394,
       "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/145",
-      "first_seen": "2026-11-23T07:40:33.935025+00:00"
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2572",
+      "first_seen": "2026-11-23T08:01:07.350017+00:00"
     }
   ],
   "pending_gone": {}
