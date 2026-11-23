@@ -3,13 +3,12 @@
   "not_found_streak": 0,
   "totals": {
     "Talence (33400)": 2,
-    "Pessac (33600)": 6
+    "Pessac (33600)": 5
   },
   "seen_ids": [
     "145",
     "1566",
     "1971",
-    "569",
     "579",
     "584",
     "700"
@@ -74,8 +73,10 @@
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/700",
       "first_seen": "2026-11-23T12:48:18.915032+00:00"
-    },
-    {
+    }
+  ],
+  "pending_gone": {
+    "569": {
       "tool": 48,
       "id": 569,
       "address": "2 avenue Jean Babin 33600 PESSAC",
@@ -83,8 +84,8 @@
       "rent": 45856,
       "bedroomCount": 1,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/569",
-      "first_seen": "2026-11-23T08:44:17.739017+00:00"
+      "first_seen": "2026-11-23T08:44:17.739017+00:00",
+      "missing_runs": 1
     }
-  ],
-  "pending_gone": {}
+  }
 }
