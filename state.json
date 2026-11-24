@@ -3,13 +3,14 @@
   "not_found_streak": 0,
   "totals": {
     "Talence (33400)": 1,
-    "Pessac (33600)": 3
+    "Pessac (33600)": 4
   },
   "seen_ids": [
     "145",
     "1971",
     "579",
-    "584"
+    "584",
+    "700"
   ],
   "items": [
     {
@@ -51,6 +52,16 @@
       "bedroomCount": 4,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/584",
       "first_seen": "2026-11-17T10:16:17.609718+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 700,
+      "address": "20 avenue de BARDANAC 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 26400,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/700",
+      "first_seen": "2026-11-24T14:36:19.361795+00:00"
     }
   ],
   "pending_gone": {}
