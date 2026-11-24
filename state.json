@@ -53,17 +53,5 @@
       "first_seen": "2026-11-23T07:40:33.935025+00:00"
     }
   ],
-  "pending_gone": {
-    "1566": {
-      "tool": 48,
-      "id": 1566,
-      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
-      "city": "Talence",
-      "rent": 35779,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
-      "first_seen": "2026-11-16T13:40:42.538482+00:00",
-      "missing_runs": 1
-    }
-  }
+  "pending_gone": {}
 }
