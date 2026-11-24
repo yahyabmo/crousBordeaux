@@ -64,17 +64,5 @@
       "first_seen": "2026-11-23T07:40:33.935025+00:00"
     }
   ],
-  "pending_gone": {
-    "2249": {
-      "tool": 48,
-      "id": 2249,
-      "address": "9 Esplanade des Antilles 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 26400,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2249",
-      "first_seen": "2026-11-24T06:54:19.603153+00:00",
-      "missing_runs": 1
-    }
-  }
+  "pending_gone": {}
 }
