@@ -53,17 +53,5 @@
       "first_seen": "2026-11-23T07:40:33.935025+00:00"
     }
   ],
-  "pending_gone": {
-    "1971": {
-      "tool": 48,
-      "id": 1971,
-      "address": "10 AV PREVOST 33400 TALENCE",
-      "city": "Talence",
-      "rent": 42134,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1971",
-      "first_seen": "2026-11-20T12:58:18.814708+00:00",
-      "missing_runs": 1
-    }
-  }
+  "pending_gone": {}
 }
