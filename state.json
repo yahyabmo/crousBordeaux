@@ -2,12 +2,13 @@
   "status": "ok",
   "not_found_streak": 0,
   "totals": {
-    "Talence (33400)": 1,
-    "Pessac (33600)": 4
+    "Talence (33400)": 2,
+    "Pessac (33600)": 5
   },
   "seen_ids": [
     "145",
     "1566",
+    "2805",
     "579",
     "584"
   ],
@@ -21,6 +22,16 @@
       "bedroomCount": 4,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
       "first_seen": "2026-11-25T08:30:46.347577+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 2805,
+      "address": "8 rue des Tulipiers 33170 GRADIGNAN",
+      "city": "Talence",
+      "rent": 39486,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/2805",
+      "first_seen": "2026-11-25T14:50:35.102702+00:00"
     },
     {
       "tool": 48,
