@@ -16,16 +16,6 @@
   "items": [
     {
       "tool": 48,
-      "id": 1566,
-      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
-      "city": "Talence",
-      "rent": 35779,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
-      "first_seen": "2026-11-25T08:30:46.347577+00:00"
-    },
-    {
-      "tool": 48,
       "id": 1971,
       "address": "10 AV PREVOST 33400 TALENCE",
       "city": "Talence",
@@ -36,13 +26,23 @@
     },
     {
       "tool": 48,
-      "id": 145,
-      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
+      "id": 1566,
+      "address": "10 rue Robert ESCARPIT 33600 PESSAC",
+      "city": "Talence",
+      "rent": 35779,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/1566",
+      "first_seen": "2026-11-25T08:30:46.347577+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 579,
+      "address": "2 avenue Jean Babin 33600 PESSAC",
       "city": "Pessac",
-      "rent": 62505,
+      "rent": 72151,
       "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/145",
-      "first_seen": "2026-11-23T07:40:33.935025+00:00"
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/579",
+      "first_seen": "2026-11-20T07:24:18.152185+00:00"
     },
     {
       "tool": 48,
@@ -56,13 +56,13 @@
     },
     {
       "tool": 48,
-      "id": 579,
-      "address": "2 avenue Jean Babin 33600 PESSAC",
+      "id": 145,
+      "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
       "city": "Pessac",
-      "rent": 72151,
+      "rent": 62505,
       "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/579",
-      "first_seen": "2026-11-20T07:24:18.152185+00:00"
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/145",
+      "first_seen": "2026-11-23T07:40:33.935025+00:00"
     },
     {
       "tool": 48,
