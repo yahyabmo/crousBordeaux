@@ -53,17 +53,5 @@
       "first_seen": "2026-11-23T07:40:33.935025+00:00"
     }
   ],
-  "pending_gone": {
-    "330": {
-      "tool": 48,
-      "id": 330,
-      "address": "8 Rue Lucie Aubrac 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 39755,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/330",
-      "first_seen": "2026-11-26T07:02:27.015466+00:00",
-      "missing_runs": 1
-    }
-  }
+  "pending_gone": {}
 }
