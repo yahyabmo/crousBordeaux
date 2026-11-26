@@ -47,16 +47,6 @@
     },
     {
       "tool": 48,
-      "id": 330,
-      "address": "8 Rue Lucie Aubrac 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 39755,
-      "bedroomCount": 1,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/330",
-      "first_seen": "2026-11-26T07:02:27.015466+00:00"
-    },
-    {
-      "tool": 48,
       "id": 145,
       "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
       "city": "Pessac",
@@ -84,6 +74,16 @@
       "bedroomCount": 4,
       "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/584",
       "first_seen": "2026-11-17T10:16:17.609718+00:00"
+    },
+    {
+      "tool": 48,
+      "id": 330,
+      "address": "8 Rue Lucie Aubrac 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 39755,
+      "bedroomCount": 1,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/330",
+      "first_seen": "2026-11-26T07:02:27.015466+00:00"
     }
   ],
   "pending_gone": {}
