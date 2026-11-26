@@ -3,15 +3,14 @@
   "not_found_streak": 0,
   "totals": {
     "Talence (33400)": 2,
-    "Pessac (33600)": 5
+    "Pessac (33600)": 4
   },
   "seen_ids": [
     "145",
     "1566",
     "1971",
     "330",
-    "579",
-    "584"
+    "579"
   ],
   "items": [
     {
@@ -46,16 +45,6 @@
     },
     {
       "tool": 48,
-      "id": 584,
-      "address": "2 avenue Jean Babin 33600 PESSAC",
-      "city": "Pessac",
-      "rent": 37925,
-      "bedroomCount": 4,
-      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/584",
-      "first_seen": "2026-11-17T10:16:17.609718+00:00"
-    },
-    {
-      "tool": 48,
       "id": 145,
       "address": "Allée Ausone / Avenue Léon Duguit 33600 PESSAC",
       "city": "Pessac",
@@ -75,5 +64,17 @@
       "first_seen": "2026-11-26T07:02:27.015466+00:00"
     }
   ],
-  "pending_gone": {}
+  "pending_gone": {
+    "584": {
+      "tool": 48,
+      "id": 584,
+      "address": "2 avenue Jean Babin 33600 PESSAC",
+      "city": "Pessac",
+      "rent": 37925,
+      "bedroomCount": 4,
+      "url": "https://trouverunlogement.lescrous.fr/tools/48/accommodations/584",
+      "first_seen": "2026-11-17T10:16:17.609718+00:00",
+      "missing_runs": 1
+    }
+  }
 }
